@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233### 创建一级目录mkdir dir1如果dir1目录 已经存在，会提示目录已经存在### 创建多级目录mkdir -p dir1/dir2### 在终端打开某个软件open Applications/iTunes.app-e filename 如果 filename存在，则为真-d">
+<meta name="description" content="创建一级目录12mkdir dir1如果dir1目录 已经存在，会提示目录已经存在 创建多级目录1mkdir -p dir1/dir2 在终端打开某个软件1open Applications/iTunes.app 1234567891011121314151617-e filename 如果 filename存在，则为真-d filename 如果 filename为目录，则为真 -f filen">
 <meta name="keywords" content="Shell脚本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell命令">
 <meta property="og:url" content="http://yoursite.com/2017/04/10/Shell命令/index.html">
 <meta property="og:site_name" content="黄可可的博客">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233### 创建一级目录mkdir dir1如果dir1目录 已经存在，会提示目录已经存在### 创建多级目录mkdir -p dir1/dir2### 在终端打开某个软件open Applications/iTunes.app-e filename 如果 filename存在，则为真-d">
+<meta property="og:description" content="创建一级目录12mkdir dir1如果dir1目录 已经存在，会提示目录已经存在 创建多级目录1mkdir -p dir1/dir2 在终端打开某个软件1open Applications/iTunes.app 1234567891011121314151617-e filename 如果 filename存在，则为真-d filename 如果 filename为目录，则为真 -f filen">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-20T00:45:00.414Z">
+<meta property="og:updated_time" content="2018-08-20T02:17:22.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell命令">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233### 创建一级目录mkdir dir1如果dir1目录 已经存在，会提示目录已经存在### 创建多级目录mkdir -p dir1/dir2### 在终端打开某个软件open Applications/iTunes.app-e filename 如果 filename存在，则为真-d">
+<meta name="twitter:description" content="创建一级目录12mkdir dir1如果dir1目录 已经存在，会提示目录已经存在 创建多级目录1mkdir -p dir1/dir2 在终端打开某个软件1open Applications/iTunes.app 1234567891011121314151617-e filename 如果 filename存在，则为真-d filename 如果 filename为目录，则为真 -f filen">
 
 
 
@@ -322,7 +322,13 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">### 创建一级目录</span><br><span class="line">mkdir dir1</span><br><span class="line">如果dir1目录 已经存在，会提示目录已经存在</span><br><span class="line">### 创建多级目录</span><br><span class="line">mkdir -p dir1/dir2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 在终端打开某个软件</span><br><span class="line">open Applications/iTunes.app</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-e filename 如果 filename存在，则为真</span><br><span class="line">-d filename 如果 filename为目录，则为真 </span><br><span class="line">-f filename 如果 filename为常规文件，则为真</span><br><span class="line">-L filename 如果 filename为符号链接，则为真</span><br><span class="line">-r filename 如果 filename可读，则为真 </span><br><span class="line">-w filename 如果 filename可写，则为真 </span><br><span class="line">-x filename 如果 filename可执行，则为真</span><br><span class="line">-s filename 如果文件长度不为0，则为真</span><br><span class="line">-h filename 如果文件是软链接，则为真</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### OC代码编译成C++</span><br><span class="line">clang -rewrite-objc main.m</span><br><span class="line"></span><br><span class="line">### 运行脚本去除运行权限</span><br><span class="line">eg: chmod +x shell.sh</span><br><span class="line"></span><br><span class="line">### 删除命令</span><br><span class="line">&quot;rm -f&quot; 强行删除，忽略不存在的文件，不提示确认。(f为force的意思)</span><br><span class="line">&quot;rm -i&quot; 进行交互式删除，即删除时会提示确认。(i为interactive的意思)</span><br><span class="line">&quot;rm -r&quot; 将参数中列出的全部目录和子目录进行递归删除。(r为recursive的意思)</span><br><span class="line">&quot;rm -v&quot; 详细显示删除操作进行的步骤。(v为verbose的意思)</span><br></pre></td></tr></table></figure>
+        <h3 id="创建一级目录"><a href="#创建一级目录" class="headerlink" title="创建一级目录"></a>创建一级目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir dir1</span><br><span class="line">如果dir1目录 已经存在，会提示目录已经存在</span><br></pre></td></tr></table></figure>
+<h3 id="创建多级目录"><a href="#创建多级目录" class="headerlink" title="创建多级目录"></a>创建多级目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p dir1/dir2</span><br></pre></td></tr></table></figure>
+<h3 id="在终端打开某个软件"><a href="#在终端打开某个软件" class="headerlink" title="在终端打开某个软件"></a>在终端打开某个软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open Applications/iTunes.app</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-e filename 如果 filename存在，则为真</span><br><span class="line"></span><br><span class="line">-d filename 如果 filename为目录，则为真 </span><br><span class="line"></span><br><span class="line">-f filename 如果 filename为常规文件，则为真</span><br><span class="line"></span><br><span class="line">-L filename 如果 filename为符号链接，则为真</span><br><span class="line"></span><br><span class="line">-r filename 如果 filename可读，则为真 </span><br><span class="line"></span><br><span class="line">-w filename 如果 filename可写，则为真 </span><br><span class="line"></span><br><span class="line">-x filename 如果 filename可执行，则为真</span><br><span class="line"></span><br><span class="line">-s filename 如果文件长度不为0，则为真</span><br><span class="line"></span><br><span class="line">-h filename 如果文件是软链接，则为真</span><br></pre></td></tr></table></figure>
+<h3 id="OC代码编译成C"><a href="#OC代码编译成C" class="headerlink" title="OC代码编译成C++"></a>OC代码编译成C++</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang -rewrite-objc main.m</span><br></pre></td></tr></table></figure>
+<h3 id="运行脚本去除运行权限"><a href="#运行脚本去除运行权限" class="headerlink" title="运行脚本去除运行权限"></a>运行脚本去除运行权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: chmod +x shell.sh</span><br></pre></td></tr></table></figure>
+<h3 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;rm -f&quot; 强行删除，忽略不存在的文件，不提示确认。(f为force的意思)</span><br><span class="line">&quot;rm -i&quot; 进行交互式删除，即删除时会提示确认。(i为interactive的意思)</span><br><span class="line">&quot;rm -r&quot; 将参数中列出的全部目录和子目录进行递归删除。(r为recursive的意思)</span><br><span class="line">&quot;rm -v&quot; 详细显示删除操作进行的步骤。(v为verbose的意思)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -413,8 +419,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -440,7 +455,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -474,6 +489,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一级目录"><span class="nav-number">1.</span> <span class="nav-text">创建一级目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建多级目录"><span class="nav-number">2.</span> <span class="nav-text">创建多级目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在终端打开某个软件"><span class="nav-number">3.</span> <span class="nav-text">在终端打开某个软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OC代码编译成C"><span class="nav-number">4.</span> <span class="nav-text">OC代码编译成C++</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行脚本去除运行权限"><span class="nav-number">5.</span> <span class="nav-text">运行脚本去除运行权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除命令"><span class="nav-number">6.</span> <span class="nav-text">删除命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -325,7 +325,13 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">### 创建一级目录</span><br><span class="line">mkdir dir1</span><br><span class="line">如果dir1目录 已经存在，会提示目录已经存在</span><br><span class="line">### 创建多级目录</span><br><span class="line">mkdir -p dir1/dir2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 在终端打开某个软件</span><br><span class="line">open Applications/iTunes.app</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-e filename 如果 filename存在，则为真</span><br><span class="line">-d filename 如果 filename为目录，则为真 </span><br><span class="line">-f filename 如果 filename为常规文件，则为真</span><br><span class="line">-L filename 如果 filename为符号链接，则为真</span><br><span class="line">-r filename 如果 filename可读，则为真 </span><br><span class="line">-w filename 如果 filename可写，则为真 </span><br><span class="line">-x filename 如果 filename可执行，则为真</span><br><span class="line">-s filename 如果文件长度不为0，则为真</span><br><span class="line">-h filename 如果文件是软链接，则为真</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### OC代码编译成C++</span><br><span class="line">clang -rewrite-objc main.m</span><br><span class="line"></span><br><span class="line">### 运行脚本去除运行权限</span><br><span class="line">eg: chmod +x shell.sh</span><br><span class="line"></span><br><span class="line">### 删除命令</span><br><span class="line">&quot;rm -f&quot; 强行删除，忽略不存在的文件，不提示确认。(f为force的意思)</span><br><span class="line">&quot;rm -i&quot; 进行交互式删除，即删除时会提示确认。(i为interactive的意思)</span><br><span class="line">&quot;rm -r&quot; 将参数中列出的全部目录和子目录进行递归删除。(r为recursive的意思)</span><br><span class="line">&quot;rm -v&quot; 详细显示删除操作进行的步骤。(v为verbose的意思)</span><br></pre></td></tr></table></figure>
+            <h3 id="创建一级目录"><a href="#创建一级目录" class="headerlink" title="创建一级目录"></a>创建一级目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir dir1</span><br><span class="line">如果dir1目录 已经存在，会提示目录已经存在</span><br></pre></td></tr></table></figure>
+<h3 id="创建多级目录"><a href="#创建多级目录" class="headerlink" title="创建多级目录"></a>创建多级目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p dir1/dir2</span><br></pre></td></tr></table></figure>
+<h3 id="在终端打开某个软件"><a href="#在终端打开某个软件" class="headerlink" title="在终端打开某个软件"></a>在终端打开某个软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open Applications/iTunes.app</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-e filename 如果 filename存在，则为真</span><br><span class="line"></span><br><span class="line">-d filename 如果 filename为目录，则为真 </span><br><span class="line"></span><br><span class="line">-f filename 如果 filename为常规文件，则为真</span><br><span class="line"></span><br><span class="line">-L filename 如果 filename为符号链接，则为真</span><br><span class="line"></span><br><span class="line">-r filename 如果 filename可读，则为真 </span><br><span class="line"></span><br><span class="line">-w filename 如果 filename可写，则为真 </span><br><span class="line"></span><br><span class="line">-x filename 如果 filename可执行，则为真</span><br><span class="line"></span><br><span class="line">-s filename 如果文件长度不为0，则为真</span><br><span class="line"></span><br><span class="line">-h filename 如果文件是软链接，则为真</span><br></pre></td></tr></table></figure>
+<h3 id="OC代码编译成C"><a href="#OC代码编译成C" class="headerlink" title="OC代码编译成C++"></a>OC代码编译成C++</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang -rewrite-objc main.m</span><br></pre></td></tr></table></figure>
+<h3 id="运行脚本去除运行权限"><a href="#运行脚本去除运行权限" class="headerlink" title="运行脚本去除运行权限"></a>运行脚本去除运行权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: chmod +x shell.sh</span><br></pre></td></tr></table></figure>
+<h3 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;rm -f&quot; 强行删除，忽略不存在的文件，不提示确认。(f为force的意思)</span><br><span class="line">&quot;rm -i&quot; 进行交互式删除，即删除时会提示确认。(i为interactive的意思)</span><br><span class="line">&quot;rm -r&quot; 将参数中列出的全部目录和子目录进行递归删除。(r为recursive的意思)</span><br><span class="line">&quot;rm -v&quot; 详细显示删除操作进行的步骤。(v为verbose的意思)</span><br></pre></td></tr></table></figure>
 
           
         
@@ -467,7 +473,7 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1. 分类和扩展有什么区别？可以分别用来做什么？分类有哪些局限性？分类的结构体里面有哪些成员？</span><br><span class="line"></span><br><span class="line">2. 讲一下atomic的实现机制；为什么不能保证绝对的线程安全（最好可以结合场景来说）？</span><br><span class="line"></span><br><span class="line">3. 被weak修饰的对象在被释放的时候会发生什么？是如何实现的？知道sideTable么？里面的结构可以画出来么？</span><br><span class="line"></span><br><span class="line">4. 关联对象有什么应用，系统如何管理关联对象？其被释放的时候需要手动将所有的关联对象的指针置空么？</span><br><span class="line"></span><br><span class="line">5. KVO的底层实现？如何取消系统默认的KVO并手动触发（给KVO的触发设定条件：改变的值符合某个条件时再触发KVO）？</span><br><span class="line"></span><br><span class="line">6. Autoreleasepool所使用的数据结构是什么？AutoreleasePoolPage结构体了解么？</span><br><span class="line"></span><br><span class="line">7. 讲一下对象，类对象，元类，跟元类结构体的组成以及他们是如何相关联的？为什么对象方法没有保存的对象结构体里，而是保存在类对象的结构体里？</span><br><span class="line"></span><br><span class="line">8. class_ro_t 和 class_rw_t 的区别？</span><br><span class="line"></span><br><span class="line">9. iOS 中内省的几个方法？class方法和objc_getClass方法有什么区别?</span><br><span class="line"></span><br><span class="line">10. 在运行时创建类的方法objc_allocateClassPair的方法名尾部为什么是pair（成对的意思）？</span><br><span class="line"></span><br><span class="line">11. 一个int变量被__block修饰与否的区别？</span><br><span class="line"></span><br><span class="line">12. 为什么在block外部使用__weak修饰的同时需要在内部使用__strong修饰？</span><br><span class="line"></span><br><span class="line">13. RunLoop的作用是什么？它的内部工作机制了解么？（最好结合线程和内存管理来说）</span><br><span class="line"></span><br><span class="line">14. 哪些场景可以触发离屏渲染？</span><br></pre></td></tr></table></figure>
+            <h3 id="BAT的一些基础面试图"><a href="#BAT的一些基础面试图" class="headerlink" title="BAT的一些基础面试图"></a>BAT的一些基础面试图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1. 分类和扩展有什么区别？可以分别用来做什么？分类有哪些局限性？分类的结构体里面有哪些成员？</span><br><span class="line"></span><br><span class="line">2. 讲一下atomic的实现机制；为什么不能保证绝对的线程安全（最好可以结合场景来说）？</span><br><span class="line"></span><br><span class="line">3. 被weak修饰的对象在被释放的时候会发生什么？是如何实现的？知道sideTable么？里面的结构可以画出来么？</span><br><span class="line"></span><br><span class="line">4. 关联对象有什么应用，系统如何管理关联对象？其被释放的时候需要手动将所有的关联对象的指针置空么？</span><br><span class="line"></span><br><span class="line">5. KVO的底层实现？如何取消系统默认的KVO并手动触发（给KVO的触发设定条件：改变的值符合某个条件时再触发KVO）？</span><br><span class="line"></span><br><span class="line">6. Autoreleasepool所使用的数据结构是什么？AutoreleasePoolPage结构体了解么？</span><br><span class="line"></span><br><span class="line">7. 讲一下对象，类对象，元类，跟元类结构体的组成以及他们是如何相关联的？为什么对象方法没有保存的对象结构体里，而是保存在类对象的结构体里？</span><br><span class="line"></span><br><span class="line">8. class_ro_t 和 class_rw_t 的区别？</span><br><span class="line"></span><br><span class="line">9. iOS 中内省的几个方法？class方法和objc_getClass方法有什么区别?</span><br><span class="line"></span><br><span class="line">10. 在运行时创建类的方法objc_allocateClassPair的方法名尾部为什么是pair（成对的意思）？</span><br><span class="line"></span><br><span class="line">11. 一个int变量被__block修饰与否的区别？</span><br><span class="line"></span><br><span class="line">12. 为什么在block外部使用__weak修饰的同时需要在内部使用__strong修饰？</span><br><span class="line"></span><br><span class="line">13. RunLoop的作用是什么？它的内部工作机制了解么？（最好结合线程和内存管理来说）</span><br><span class="line"></span><br><span class="line">14. 哪些场景可以触发离屏渲染？</span><br></pre></td></tr></table></figure>
 
           
         
@@ -558,28 +564,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -609,7 +593,8 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">之前一直在简书或其他平台写博客, 分享自己的技术经历,今天花了一天时间,搭建了自己的技术博客,非常开心!</span><br><span class="line">记录一下这个激动人心的时刻!</span><br><span class="line">以后就以这个为平台了!</span><br><span class="line">在技术的路线上越走越远!</span><br><span class="line">我的[Github](https://github.com/huangbingke)</span><br></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">之前一直在简书或其他平台写博客, 分享自己的技术经历,今天花了一天时间,搭建了自己的技术博客,非常开心!</span><br><span class="line">记录一下这个激动人心的时刻!</span><br><span class="line">以后就以这个为平台了!</span><br><span class="line">在技术的路线上越走越远!</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/huangbingke" target="_blank" rel="noopener">我的Github</a></p>
 
           
         
@@ -702,7 +687,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
