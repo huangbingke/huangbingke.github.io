@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="//失败后重试  SDWebImageRetryFailed = 1 &amp;lt;&amp;lt; 0,   //UI交互期间开始下载，导致延迟下载比如UIScrollView减速。  SDWebImageLowPriority = 1 &amp;lt;&amp;lt; 1,   //只进行内存缓存  SDWebImageCacheMemoryOnly = 1 &amp;lt;&amp;lt; 2,   //这个标志可以渐进式下载,显示的">
+<meta name="description" content="//失败后重试 SDWebImageRetryFailed = 1 &amp;lt;&amp;lt; 0,  //UI交互期间开始下载，导致延迟下载比如UIScrollView减速。 SDWebImageLowPriority = 1 &amp;lt;&amp;lt; 1,  //只进行内存缓存 SDWebImageCacheMemoryOnly = 1 &amp;lt;&amp;lt; 2,  //这个标志可以渐进式下载,显示的图像是逐步在下">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SDWebImage-SDWebImageOptions">
 <meta property="og:url" content="http://huangkk.com/2017/06/12/SDWebImage-SDWebImageOptions/index.html">
 <meta property="og:site_name" content="黄可可的博客">
-<meta property="og:description" content="//失败后重试  SDWebImageRetryFailed = 1 &amp;lt;&amp;lt; 0,   //UI交互期间开始下载，导致延迟下载比如UIScrollView减速。  SDWebImageLowPriority = 1 &amp;lt;&amp;lt; 1,   //只进行内存缓存  SDWebImageCacheMemoryOnly = 1 &amp;lt;&amp;lt; 2,   //这个标志可以渐进式下载,显示的">
+<meta property="og:description" content="//失败后重试 SDWebImageRetryFailed = 1 &amp;lt;&amp;lt; 0,  //UI交互期间开始下载，导致延迟下载比如UIScrollView减速。 SDWebImageLowPriority = 1 &amp;lt;&amp;lt; 1,  //只进行内存缓存 SDWebImageCacheMemoryOnly = 1 &amp;lt;&amp;lt; 2,  //这个标志可以渐进式下载,显示的图像是逐步在下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-20T07:06:17.532Z">
+<meta property="og:updated_time" content="2018-08-20T07:11:27.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SDWebImage-SDWebImageOptions">
-<meta name="twitter:description" content="//失败后重试  SDWebImageRetryFailed = 1 &amp;lt;&amp;lt; 0,   //UI交互期间开始下载，导致延迟下载比如UIScrollView减速。  SDWebImageLowPriority = 1 &amp;lt;&amp;lt; 1,   //只进行内存缓存  SDWebImageCacheMemoryOnly = 1 &amp;lt;&amp;lt; 2,   //这个标志可以渐进式下载,显示的">
+<meta name="twitter:description" content="//失败后重试 SDWebImageRetryFailed = 1 &amp;lt;&amp;lt; 0,  //UI交互期间开始下载，导致延迟下载比如UIScrollView减速。 SDWebImageLowPriority = 1 &amp;lt;&amp;lt; 1,  //只进行内存缓存 SDWebImageCacheMemoryOnly = 1 &amp;lt;&amp;lt; 2,  //这个标志可以渐进式下载,显示的图像是逐步在下">
 
 
 
@@ -322,39 +322,39 @@
       
 
       
-        <pre><code> //失败后重试
- SDWebImageRetryFailed = 1 &lt;&lt; 0,
+        <pre><code>//失败后重试
+SDWebImageRetryFailed = 1 &lt;&lt; 0,
 
- //UI交互期间开始下载，导致延迟下载比如UIScrollView减速。
- SDWebImageLowPriority = 1 &lt;&lt; 1,
+//UI交互期间开始下载，导致延迟下载比如UIScrollView减速。
+SDWebImageLowPriority = 1 &lt;&lt; 1,
 
- //只进行内存缓存
- SDWebImageCacheMemoryOnly = 1 &lt;&lt; 2,
+//只进行内存缓存
+SDWebImageCacheMemoryOnly = 1 &lt;&lt; 2,
 
- //这个标志可以渐进式下载,显示的图像是逐步在下载
- SDWebImageProgressiveDownload = 1 &lt;&lt; 3,
-&lt; !--more--&gt;  
- //刷新缓存
- SDWebImageRefreshCached = 1 &lt;&lt; 4,
+//这个标志可以渐进式下载,显示的图像是逐步在下载
+SDWebImageProgressiveDownload = 1 &lt;&lt; 3,
 
- //后台下载
- SDWebImageContinueInBackground = 1 &lt;&lt; 5,
+//刷新缓存
+SDWebImageRefreshCached = 1 &lt;&lt; 4,
 
- //NSMutableURLRequest.HTTPShouldHandleCookies = YES;
+//后台下载
+SDWebImageContinueInBackground = 1 &lt;&lt; 5,
 
- SDWebImageHandleCookies = 1 &lt;&lt; 6,
+//NSMutableURLRequest.HTTPShouldHandleCookies = YES;
 
- //允许使用无效的SSL证书
- //SDWebImageAllowInvalidSSLCertificates = 1 &lt;&lt; 7,
+SDWebImageHandleCookies = 1 &lt;&lt; 6,
 
- //优先下载
- SDWebImageHighPriority = 1 &lt;&lt; 8,
+//允许使用无效的SSL证书
+//SDWebImageAllowInvalidSSLCertificates = 1 &lt;&lt; 7,
 
- //延迟占位符
- SDWebImageDelayPlaceholder = 1 &lt;&lt; 9,
+//优先下载
+SDWebImageHighPriority = 1 &lt;&lt; 8,
 
- //改变动画形象
- SDWebImageTransformAnimatedImage = 1 &lt;&lt; 10,
+//延迟占位符
+SDWebImageDelayPlaceholder = 1 &lt;&lt; 9,
+
+//改变动画形象
+SDWebImageTransformAnimatedImage = 1 &lt;&lt; 10,
 </code></pre>
       
     </div>
