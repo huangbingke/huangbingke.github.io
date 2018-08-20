@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://huangkk.com/2018/04/20/iOS%E6%9C%80%E5%BF%AB%E9%80%9F%E6%89%93%E5%8C%85%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2018-08-20T09:35:31.414Z</lastmod>
+    <data>
+        <display>
+        <title>iOS最快速打包方案</title>
+        <pubTime>2018-04-20T09:02:15.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS技术" url="http://huangkk.com/categories/iOS%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://huangkk.com/2016/12/21/%E9%98%B2%E6%AD%A2%E6%89%8B%E5%8A%BF%E5%86%B2%E7%AA%81/</loc>
+    <lastmod>2018-08-20T08:32:24.356Z</lastmod>
+    <data>
+        <display>
+        <title>iOS防止手势冲突</title>
+        <pubTime>2016-12-21T07:02:15.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS技术" url="http://huangkk.com/categories/iOS%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://huangkk.com/2017/08/27/SDWebImage%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2018-08-20T07:31:24.260Z</lastmod>
+    <data>
+        <display>
+        <title>SDWebImage的内部实现原理</title>
+        <pubTime>2017-08-27T08:22:43.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS技术" url="http://huangkk.com/categories/iOS%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangkk.com/2017/06/12/SDWebImage-SDWebImageOptions/</loc>
+    <lastmod>2018-08-20T07:30:12.844Z</lastmod>
+    <data>
+        <display>
+        <title>SDWebImage-SDWebImageOptions</title>
+        <pubTime>2017-06-12T08:32:00.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS技术" url="http://huangkk.com/categories/iOS%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangkk.com/2016/11/08/iOS%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%9F%BA%E7%A1%80%E7%AF%87/</loc>
+    <lastmod>2018-08-20T07:26:16.709Z</lastmod>
+    <data>
+        <display>
+        <title>iOS面试题-基础篇</title>
+        <pubTime>2016-11-08T11:02:15.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS技术" url="http://huangkk.com/categories/iOS%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangkk.com/2017/05/23/%E5%85%B3%E4%BA%8EAFN%E7%9A%84%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-08-20T07:25:11.564Z</lastmod>
+    <data>
+        <display>
+        <title>AFNetworking内存泄露问题</title>
+        <pubTime>2017-05-23T02:02:15.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS技术" url="http://huangkk.com/categories/iOS%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangkk.com/2017/04/10/Shell%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-08-20T07:22:01.182Z</lastmod>
+    <data>
+        <display>
+        <title>Shell命令</title>
+        <pubTime>2017-04-10T07:11:54.000Z</pubTime>
+        
+        <tag>Shell脚本</tag>
+         
+         
+           
+             
+              <breadCrumb title="Shell脚本" url="http://huangkk.com/categories/Shell%E8%84%9A%E6%9C%AC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangkk.com/2017/12/08/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</loc>
+    <lastmod>2018-08-20T07:20:42.706Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP状态码</title>
+        <pubTime>2017-12-08T03:02:15.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS技术" url="http://huangkk.com/categories/iOS%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangkk.com/2016/10/08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2018-08-20T06:10:37.723Z</lastmod>
+    <data>
+        <display>
+        <title>我的博客第一天</title>
+        <pubTime>2016-10-08T07:52:26.000Z</pubTime>
+        
+        <tag>随笔杂谈</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
