@@ -232,6 +232,326 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://huangkk.com/2017/06/12/SDWebImage-SDWebImageOptions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄可可">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄可可的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/12/SDWebImage-SDWebImageOptions/" itemprop="url">iOS面试题-基础篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T16:32:00+08:00">
+                2017-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>`</code><br>     //失败后重试<br>     SDWebImageRetryFailed = 1 &lt;&lt; 0,</p>
+<pre><code>//UI交互期间开始下载，导致延迟下载比如UIScrollView减速。
+SDWebImageLowPriority = 1 &lt;&lt; 1,
+
+//只进行内存缓存
+SDWebImageCacheMemoryOnly = 1 &lt;&lt; 2,
+
+//这个标志可以渐进式下载,显示的图像是逐步在下载
+SDWebImageProgressiveDownload = 1 &lt;&lt; 3,
+
+//刷新缓存
+SDWebImageRefreshCached = 1 &lt;&lt; 4,
+
+//后台下载
+SDWebImageContinueInBackground = 1 &lt;&lt; 5,
+
+//NSMutableURLRequest.HTTPShouldHandleCookies = YES;
+
+SDWebImageHandleCookies = 1 &lt;&lt; 6,
+
+//允许使用无效的SSL证书
+//SDWebImageAllowInvalidSSLCertificates = 1 &lt;&lt; 7,
+
+//优先下载
+SDWebImageHighPriority = 1 &lt;&lt; 8,
+
+//延迟占位符
+SDWebImageDelayPlaceholder = 1 &lt;&lt; 9,
+
+//改变动画形象
+SDWebImageTransformAnimatedImage = 1 &lt;&lt; 10,
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://huangkk.com/2017/05/23/关于AFN的内存问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄可可">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄可可的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/23/关于AFN的内存问题/" itemprop="url">AFNetworking内存泄露问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T10:02:15+08:00">
+                2017-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>  利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NSURLSession 里面有这两个方法:</span><br><span class="line"></span><br><span class="line">1. invalidateAndCancel失效(取消未完成任务)</span><br><span class="line">2. finishTasksAndInvalidate(允许任务完成之前无效的对象)</span><br><span class="line"></span><br><span class="line">对应的AFN里有这样一个方法:</span><br><span class="line">- (void)invalidateSessionCancelingTasks:(BOOL)cancelPendingTasks;</span><br><span class="line">YES 使Manager立即失效并取消task</span><br><span class="line">NO 会在task请求结束之后使manager失效</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>是不是发现自己从来没有写过这个方法, 赶快加上吧!</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://huangkk.com/2017/04/10/Shell命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -333,6 +653,147 @@
 <h3 id="运行脚本去除运行权限"><a href="#运行脚本去除运行权限" class="headerlink" title="运行脚本去除运行权限"></a>运行脚本去除运行权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: chmod +x shell.sh</span><br></pre></td></tr></table></figure>
 <h3 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;rm -f&quot; 强行删除，忽略不存在的文件，不提示确认。(f为force的意思)</span><br><span class="line">&quot;rm -i&quot; 进行交互式删除，即删除时会提示确认。(i为interactive的意思)</span><br><span class="line">&quot;rm -r&quot; 将参数中列出的全部目录和子目录进行递归删除。(r为recursive的意思)</span><br><span class="line">&quot;rm -v&quot; 详细显示删除操作进行的步骤。(v为verbose的意思)</span><br></pre></td></tr></table></figure>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://huangkk.com/2016/12/21/防止手势冲突/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄可可">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄可可的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/21/防止手势冲突/" itemprop="url">iOS防止手势冲突</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-21T15:02:15+08:00">
+                2016-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//防止手势冲突——防止UITableView的点击事件和手势事件冲突</span><br><span class="line">- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch &#123;</span><br><span class="line"> // 输出点击的view的类名  </span><br><span class="line"> NSLog(@&quot;%@&quot;, NSStringFromClass([touch.view class])); </span><br><span class="line"> // 若为UITableViewCellContentView（即点击了tableViewCell），则不截获Touch事件</span><br><span class="line"> if ([NSStringFromClass([touch.view class]) isEqualToString:@&quot;UITableViewCellContentView&quot;]) &#123;</span><br><span class="line">       </span><br><span class="line"> return NO;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line"> return  YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -593,8 +1054,21 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">之前一直在简书或其他平台写博客, 分享自己的技术经历,今天花了一天时间,搭建了自己的技术博客,非常开心!</span><br><span class="line">记录一下这个激动人心的时刻!</span><br><span class="line">以后就以这个为平台了!</span><br><span class="line">在技术的路线上越走越远!</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/huangbingke" target="_blank" rel="noopener">我的Github</a></p>
+            <blockquote>
+<p>之前一直在简书或其他平台写博客, 分享自己的技术经历,今天花了一天时间, 搭建了自己的技术博客,非常开心!</p>
+</blockquote>
+<blockquote>
+<p>记录一下这个激动人心的时刻!</p>
+</blockquote>
+<blockquote>
+<p>以后就以这个为平台了!</p>
+</blockquote>
+<blockquote>
+<p>在技术的路线上越走越远!</p>
+</blockquote>
+<blockquote>
+<p>我的<a href="https://github.com/huangbingke" target="_blank" rel="noopener">Github</a>.</p>
+</blockquote>
 
           
         
@@ -676,7 +1150,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
