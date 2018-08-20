@@ -354,48 +354,18 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>背景: 新需求已经开发完毕, 在测试阶段,需要不断给测试人员打包测试,不胜其烦, 由于项目采用的Swift和OC混编, 所以编译起来很慢很慢, 每一次打包都要半个小时左右, 然后再上传蒲公英平台, 二维码发给测试人员, 供测试人员下载, 尤其最后发版阶段, 更是受不了, 每次都要等待繁杂的打包工序, 身为程序员, 不能整天为这点小事浪费时间; 于是找到了一种快速打包方案, 一分钟搞定, 废话不多说了, 直接说吧!</p>
 </blockquote>
 <h3 id="1-选择真机编译"><a href="#1-选择真机编译" class="headerlink" title="1. 选择真机编译"></a>1. 选择真机编译</h3><blockquote>
-<p>选择真机编译完成之后, 在Product文件夹下, 生成一个XXX.app的文件, (没有编译完成的时候是红色的,即不存在, 编译完成之后变成黑色的,即存在);</p>
-</blockquote>
-<p><img src="/2018/04/20/iOS最快速打包方案/2459B489-4A31-407C-B372-30B9D7725436.png" alt=""></p>
-<h3 id="2-选中那个-app文件-show-in-finder"><a href="#2-选中那个-app文件-show-in-finder" class="headerlink" title="2. 选中那个.app文件, show in finder"></a>2. 选中那个.app文件, show in finder</h3><blockquote>
-<p>如下图, 赋值那个文件, 粘贴到桌面;</p>
-</blockquote>
-<p><img src="/2018/04/20/iOS最快速打包方案/BF13B589-07AE-430D-A849-F2D4B5F6CC0C.png" alt=""></p>
-<h3 id="3-在桌面创建一个名为”Payload”的文件夹"><a href="#3-在桌面创建一个名为”Payload”的文件夹" class="headerlink" title="3. 在桌面创建一个名为”Payload”的文件夹"></a>3. 在桌面创建一个名为”Payload”的文件夹</h3><blockquote>
-<p>Payload严格按照大小写, 不能写错, 可能你会要问, 为啥叫这个名字, 你下载一个ipa文件, 解压, 你就会明白了, 如下图(以涨乐财富通为例):</p>
-</blockquote>
-<p><img src="/2018/04/20/iOS最快速打包方案/E9332AD4-2E6D-4A59-ACB6-C9FA402CD3F7.png" alt=""></p>
-<blockquote>
-<p>把我们刚才粘出来的文件放入Payload文件夹, 压缩一下</p>
-</blockquote>
-<p><img src="/2018/04/20/iOS最快速打包方案/QQ20180820-170623.png" alt=""></p>
-<blockquote>
-<p>然后改后缀为ipa</p>
-</blockquote>
-<p><img src="/2018/04/20/iOS最快速打包方案/QQ20180820-170654.png" alt=""></p>
-<blockquote>
-<p>如图</p>
-</blockquote>
-<p><img src="/2018/04/20/iOS最快速打包方案/QQ20180820-170835.png" alt=""></p>
-<blockquote>
-<p>目前位置就大功告成了, 上传蒲公英, 就OK啦!</p>
-</blockquote>
-<p>不过上传蒲公英也要打开蒲公英网站等等进行一系列操作, 我们就又写了一个脚本, 运行一下, 就OK了, 自动上传蒲公英, 然后邮件自动发送到邮箱, 二维码一截图给测试人员, 美滋滋~</p>
-<h3 id="下面贴上脚本代码"><a href="#下面贴上脚本代码" class="headerlink" title="下面贴上脚本代码"></a>下面贴上脚本代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">filePath=~/Desktop/Payload.ipa</span><br><span class="line">cd ~/Desktop</span><br><span class="line">#判断桌面是否有文件</span><br><span class="line">if [[ -e Payload.ipa ]]; then</span><br><span class="line">echo &quot; ******* 开始上传 ipa *******&quot;</span><br><span class="line">    curl -O -F &quot;file=@$&#123;filePath&#125;&quot; -F &quot;uKey=你蒲公英的ukey&quot; -F &quot;_api_key=你蒲公英的api_key&quot; -F &quot;updateDescription=项目云测试集成包&quot; http://www.pgyer.com/apiv1/app/upload</span><br><span class="line">    echo &quot;******* 上传完成 ******&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;*************************************&quot;</span><br><span class="line">    echo &quot;*     桌面没有&apos;Payload.ipa&apos;文件     *&quot;</span><br><span class="line">    echo &quot;*************************************&quot;</span><br><span class="line">    exit</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#删除上传成功后返回json创建的upload文件</span><br><span class="line">if [[ -e upload ]]; then</span><br><span class="line">    rm -rf upload -r</span><br><span class="line">#    echo &quot;******删除upload文件******&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#删除桌面的ipa包</span><br><span class="line">if [[ -e Payload.ipa ]]; then</span><br><span class="line">    rm -rf Payload.ipa -r</span><br><span class="line">#    echo &quot;******删除ipa包******&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#删除桌面的Payload文件, 以及里面的包</span><br><span class="line">if [[ -d Payload ]]; then</span><br><span class="line">#    echo &quot;******删除文件夹******&quot;</span><br><span class="line">    rm -rf Payload -r</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#创建空的Payload文件夹, 下次使用</span><br><span class="line">if [[ ! -d Payload ]]; then</span><br><span class="line">#    echo &quot;创建一个空的Payload文件夹&quot;</span><br><span class="line">    mkdir Payload</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建一个文本文件, 后缀改为.sh, 把上述脚本代码粘进去, 打开终端, 运行一下上述代码, 就OK啦!</p>
-</blockquote>
-<p><img src="/2018/04/20/iOS最快速打包方案/QQ20180820-171552.png" alt=""><br><img src="/2018/04/20/iOS最快速打包方案/QQ20180820-171604.png" alt=""></p>
-<blockquote>
-<p>打开你的邮箱, 看下二维码吧!</p>
-</blockquote>
-<h4 id="注-上述方法仅限给测试人员打包测试使用-正式打包发版谨慎起见-还请选择Archive打包"><a href="#注-上述方法仅限给测试人员打包测试使用-正式打包发版谨慎起见-还请选择Archive打包" class="headerlink" title="注: 上述方法仅限给测试人员打包测试使用, 正式打包发版谨慎起见, 还请选择Archive打包!!!"></a>注: 上述方法仅限给测试人员打包测试使用, 正式打包发版谨慎起见, 还请选择Archive打包!!!</h4>
-          
+<p>选择真机编译完成之后, 在Product文件夹下, 生成一个XXX.app的文件, (没有编译完成的时候是红色的,即不存在, 编译完成之后变成黑色的,即存在);<br></p></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/20/iOS最快速打包方案/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
