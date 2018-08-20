@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:  123456789NSURLSession 里面有这两个方法:1. invalidateAndCancel失效(取消未完成任务)2. finishTasksAndInvalidate(允许任务完成之前无效的对象)对应的AFN里有这样一个方法:- (void)i">
+<meta name="description" content="利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:  12345678910NSURLSession 里面有这两个方法:1. invalidateAndCancel失效(取消未完成任务)2. finishTasksAndInvalidate(允许任务完成之前无效的对象)&amp;lt;!-- more --&amp;gt;对应的">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AFNetworking内存泄露问题">
 <meta property="og:url" content="http://huangkk.com/2017/05/23/关于AFN的内存问题/index.html">
 <meta property="og:site_name" content="黄可可的博客">
-<meta property="og:description" content="利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:  123456789NSURLSession 里面有这两个方法:1. invalidateAndCancel失效(取消未完成任务)2. finishTasksAndInvalidate(允许任务完成之前无效的对象)对应的AFN里有这样一个方法:- (void)i">
+<meta property="og:description" content="利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:  12345678910NSURLSession 里面有这两个方法:1. invalidateAndCancel失效(取消未完成任务)2. finishTasksAndInvalidate(允许任务完成之前无效的对象)&amp;lt;!-- more --&amp;gt;对应的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-20T07:11:47.440Z">
+<meta property="og:updated_time" content="2018-08-20T07:21:13.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AFNetworking内存泄露问题">
-<meta name="twitter:description" content="利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:  123456789NSURLSession 里面有这两个方法:1. invalidateAndCancel失效(取消未完成任务)2. finishTasksAndInvalidate(允许任务完成之前无效的对象)对应的AFN里有这样一个方法:- (void)i">
+<meta name="twitter:description" content="利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:  12345678910NSURLSession 里面有这两个方法:1. invalidateAndCancel失效(取消未完成任务)2. finishTasksAndInvalidate(允许任务完成之前无效的对象)&amp;lt;!-- more --&amp;gt;对应的">
 
 
 
@@ -325,7 +325,7 @@
         <blockquote>
 <p>  利用Xcode内存监测工具, 经常会看到AFN的内存泄露问题, 苦于找不到解决方案, 后来翻看源码, 又百度了一波, 才找到原因:</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NSURLSession 里面有这两个方法:</span><br><span class="line"></span><br><span class="line">1. invalidateAndCancel失效(取消未完成任务)</span><br><span class="line">2. finishTasksAndInvalidate(允许任务完成之前无效的对象)</span><br><span class="line"></span><br><span class="line">对应的AFN里有这样一个方法:</span><br><span class="line">- (void)invalidateSessionCancelingTasks:(BOOL)cancelPendingTasks;</span><br><span class="line">YES 使Manager立即失效并取消task</span><br><span class="line">NO 会在task请求结束之后使manager失效</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">NSURLSession 里面有这两个方法:</span><br><span class="line"></span><br><span class="line">1. invalidateAndCancel失效(取消未完成任务)</span><br><span class="line">2. finishTasksAndInvalidate(允许任务完成之前无效的对象)</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">对应的AFN里有这样一个方法:</span><br><span class="line">- (void)invalidateSessionCancelingTasks:(BOOL)cancelPendingTasks;</span><br><span class="line">YES 使Manager立即失效并取消task</span><br><span class="line">NO 会在task请求结束之后使manager失效</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>是不是发现自己从来没有写过这个方法, 赶快加上吧!</p>
 </blockquote>
