@@ -79,25 +79,25 @@
 
 
 
-<meta name="description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   ##前言  最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP,">
+<meta name="description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   前言 最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP, 那各">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS一套代码展示多个APP以及不同图标名称">
 <meta property="og:url" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/index.html">
 <meta property="og:site_name" content="黄可可的博客">
-<meta property="og:description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   ##前言  最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP,">
+<meta property="og:description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   前言 最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP, 那各">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/IMG_4832.PNG">
+<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-114414.PNG">
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-111735.png">
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-112606.png">
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113403.png">
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113100.png">
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113820.png">
-<meta property="og:updated_time" content="2018-08-22T03:40:09.712Z">
+<meta property="og:updated_time" content="2018-08-22T03:44:49.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS一套代码展示多个APP以及不同图标名称">
-<meta name="twitter:description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   ##前言  最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP,">
-<meta name="twitter:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/IMG_4832.PNG">
+<meta name="twitter:description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   前言 最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP, 那各">
+<meta name="twitter:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-114414.PNG">
 
 
 
@@ -362,9 +362,8 @@
         <blockquote>
 <p>先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:</p>
 </blockquote>
-<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/IMG_4832.PNG" alt=""></p>
-<p>##前言</p>
-<blockquote>
+<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-114414.PNG" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP, 那各种证书岂不是要一套新的? 当时心中一万句MMP, 心说好麻烦.</p>
 </blockquote>
 <blockquote>
@@ -375,17 +374,14 @@
 <blockquote>
 <p>下面介绍一下配置步骤:</p>
 </blockquote>
-<p>##正文</p>
-<p>###1.在工程中配置不同的bound ID</p>
-<blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-在工程中配置不同的bound-ID"><a href="#1-在工程中配置不同的bound-ID" class="headerlink" title="1.在工程中配置不同的bound ID"></a>1.在工程中配置不同的bound ID</h3><blockquote>
 <p>我们都是知道, 要想装不同的APP, 只有配置不同的bound ID, 原来项目中就有配置不同bound ID的地方, 下面看图:</p>
 </blockquote>
 <p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-111735.png" alt="配置不同bound ID"></p>
 <blockquote>
 <p>这里之前是一样的, 现在我们在debug模式那里改了一个不一样的, 加了一个dev的标志,这样就区分开了;</p>
 </blockquote>
-<p>###2.配置不同的AppIcon</p>
-<blockquote>
+<h3 id="2-配置不同的AppIcon"><a href="#2-配置不同的AppIcon" class="headerlink" title="2.配置不同的AppIcon"></a>2.配置不同的AppIcon</h3><blockquote>
 <p>不同的版本AppIcon也不一样, 下面就配置一下测试版本的AppIcon, 取名为AppIconDev:</p>
 </blockquote>
 <p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-112606.png" alt=""></p>
@@ -393,14 +389,12 @@
 <p>然后再当前Target的Build Setting下搜索icon找到Asset Catalog App Icon Set Name，然后进行如下配置：</p>
 </blockquote>
 <p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113403.png" alt=""></p>
-<p>###3.配置不同的App Display Name</p>
-<blockquote>
+<h3 id="3-配置不同的App-Display-Name"><a href="#3-配置不同的App-Display-Name" class="headerlink" title="3.配置不同的App Display Name"></a>3.配置不同的App Display Name</h3><blockquote>
 <p>配置不同的应用名称，这里需要使用到User-Defined加上info.plist来进行配置；</p>
 <p>首先，我们需要新增一个User-Defined，如下图：</p>
 </blockquote>
 <p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113100.png" alt=""></p>
-<p>###4.配置info.plist文件</p>
-<blockquote>
+<h3 id="4-配置info-plist文件"><a href="#4-配置info-plist文件" class="headerlink" title="4.配置info.plist文件"></a>4.配置info.plist文件</h3><blockquote>
 <p>在info.plist中找到Bundle display name，将其设置成我们刚刚新建的User-Defined:</p>
 </blockquote>
 <p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113820.png" alt=""></p>
@@ -408,8 +402,7 @@
 <blockquote>
 <p>下面就大功告成了! 赶快编译一下看看效果吧!</p>
 </blockquote>
-<p>###总结</p>
-<blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
 <p>偷懒是唯一生产力!</p>
 </blockquote>
 
@@ -531,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -596,6 +598,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在工程中配置不同的bound-ID"><span class="nav-number">2.1.</span> <span class="nav-text">1.在工程中配置不同的bound ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置不同的AppIcon"><span class="nav-number">2.2.</span> <span class="nav-text">2.配置不同的AppIcon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-配置不同的App-Display-Name"><span class="nav-number">2.3.</span> <span class="nav-text">3.配置不同的App Display Name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-配置info-plist文件"><span class="nav-number">2.4.</span> <span class="nav-text">4.配置info.plist文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
