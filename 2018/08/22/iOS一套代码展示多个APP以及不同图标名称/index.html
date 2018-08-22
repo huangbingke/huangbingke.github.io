@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Shell脚本," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -79,18 +79,25 @@
 
 
 
-<meta name="description" content="创建一级目录12mkdir dir1如果dir1目录 已经存在，会提示目录已经存在 创建多级目录1mkdir -p dir1/dir2">
-<meta name="keywords" content="Shell脚本">
+<meta name="description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   ##前言  最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP,">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell命令">
-<meta property="og:url" content="http://huangkk.com/2017/04/10/Shell命令/index.html">
+<meta property="og:title" content="iOS一套代码展示多个APP以及不同图标名称">
+<meta property="og:url" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/index.html">
 <meta property="og:site_name" content="黄可可的博客">
-<meta property="og:description" content="创建一级目录12mkdir dir1如果dir1目录 已经存在，会提示目录已经存在 创建多级目录1mkdir -p dir1/dir2">
+<meta property="og:description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   ##前言  最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-20T07:22:01.182Z">
+<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/IMG_4832.PNG">
+<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-111735.png">
+<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-112606.png">
+<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113403.png">
+<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113100.png">
+<meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113820.png">
+<meta property="og:updated_time" content="2018-08-22T03:40:09.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell命令">
-<meta name="twitter:description" content="创建一级目录12mkdir dir1如果dir1目录 已经存在，会提示目录已经存在 创建多级目录1mkdir -p dir1/dir2">
+<meta name="twitter:title" content="iOS一套代码展示多个APP以及不同图标名称">
+<meta name="twitter:description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   ##前言  最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP,">
+<meta name="twitter:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/IMG_4832.PNG">
 
 
 
@@ -120,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://huangkk.com/2017/04/10/Shell命令/"/>
+  <link rel="canonical" href="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/"/>
 
 
 
 
 
-  <title>Shell命令 | 黄可可的博客</title>
+  <title>iOS一套代码展示多个APP以及不同图标名称 | 黄可可的博客</title>
   
 
 
@@ -263,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huangkk.com/2017/04/10/Shell命令/">
+    <link itemprop="mainEntityOfPage" href="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄可可">
@@ -280,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Shell命令</h1>
+          <h1 class="post-title" itemprop="name headline">iOS一套代码展示多个APP以及不同图标名称</h1>
         
 
         <div class="post-meta">
@@ -292,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T15:11:54+08:00">
-                2017-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T10:54:36+08:00">
+                2018-08-22
               </time>
             
 
@@ -315,8 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Shell脚本/" itemprop="url" rel="index">
-                    <span itemprop="name">Shell脚本</span>
+                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS技术</span>
                   </a>
                 </span>
 
@@ -352,14 +359,59 @@
       
 
       
-        <h3 id="创建一级目录"><a href="#创建一级目录" class="headerlink" title="创建一级目录"></a>创建一级目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir dir1</span><br><span class="line">如果dir1目录 已经存在，会提示目录已经存在</span><br></pre></td></tr></table></figure>
-<h3 id="创建多级目录"><a href="#创建多级目录" class="headerlink" title="创建多级目录"></a>创建多级目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p dir1/dir2</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:</p>
+</blockquote>
+<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/IMG_4832.PNG" alt=""></p>
+<p>##前言</p>
+<blockquote>
+<p>最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP, 那各种证书岂不是要一套新的? 当时心中一万句MMP, 心说好麻烦.</p>
+</blockquote>
+<blockquote>
+<p>本着偷懒是程序员唯一生产力这一宗旨, 查阅资料, 发现了一个更简便的方法, 省去了改来改去bound ID, 切换各种证书的麻烦, 一次配置, 终身受益, 可谓一劳永逸, 配置了一下, 简直如沐春风, 整个人都变好了.</p>
+</blockquote>
 <a id="more"></a>
-<h3 id="在终端打开某个软件"><a href="#在终端打开某个软件" class="headerlink" title="在终端打开某个软件"></a>在终端打开某个软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open Applications/iTunes.app</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-e filename 如果 filename存在，则为真</span><br><span class="line"></span><br><span class="line">-d filename 如果 filename为目录，则为真 </span><br><span class="line"></span><br><span class="line">-f filename 如果 filename为常规文件，则为真</span><br><span class="line"></span><br><span class="line">-L filename 如果 filename为符号链接，则为真</span><br><span class="line"></span><br><span class="line">-r filename 如果 filename可读，则为真 </span><br><span class="line"></span><br><span class="line">-w filename 如果 filename可写，则为真 </span><br><span class="line"></span><br><span class="line">-x filename 如果 filename可执行，则为真</span><br><span class="line"></span><br><span class="line">-s filename 如果文件长度不为0，则为真</span><br><span class="line"></span><br><span class="line">-h filename 如果文件是软链接，则为真</span><br></pre></td></tr></table></figure>
-<h3 id="OC代码编译成C"><a href="#OC代码编译成C" class="headerlink" title="OC代码编译成C++"></a>OC代码编译成C++</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang -rewrite-objc main.m</span><br></pre></td></tr></table></figure>
-<h3 id="运行脚本去除运行权限"><a href="#运行脚本去除运行权限" class="headerlink" title="运行脚本去除运行权限"></a>运行脚本去除运行权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: chmod +x shell.sh</span><br></pre></td></tr></table></figure>
-<h3 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;rm -f&quot; 强行删除，忽略不存在的文件，不提示确认。(f为force的意思)</span><br><span class="line">&quot;rm -i&quot; 进行交互式删除，即删除时会提示确认。(i为interactive的意思)</span><br><span class="line">&quot;rm -r&quot; 将参数中列出的全部目录和子目录进行递归删除。(r为recursive的意思)</span><br><span class="line">&quot;rm -v&quot; 详细显示删除操作进行的步骤。(v为verbose的意思)</span><br></pre></td></tr></table></figure>
+<p>–</p>
+<blockquote>
+<p>下面介绍一下配置步骤:</p>
+</blockquote>
+<p>##正文</p>
+<p>###1.在工程中配置不同的bound ID</p>
+<blockquote>
+<p>我们都是知道, 要想装不同的APP, 只有配置不同的bound ID, 原来项目中就有配置不同bound ID的地方, 下面看图:</p>
+</blockquote>
+<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-111735.png" alt="配置不同bound ID"></p>
+<blockquote>
+<p>这里之前是一样的, 现在我们在debug模式那里改了一个不一样的, 加了一个dev的标志,这样就区分开了;</p>
+</blockquote>
+<p>###2.配置不同的AppIcon</p>
+<blockquote>
+<p>不同的版本AppIcon也不一样, 下面就配置一下测试版本的AppIcon, 取名为AppIconDev:</p>
+</blockquote>
+<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-112606.png" alt=""></p>
+<blockquote>
+<p>然后再当前Target的Build Setting下搜索icon找到Asset Catalog App Icon Set Name，然后进行如下配置：</p>
+</blockquote>
+<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113403.png" alt=""></p>
+<p>###3.配置不同的App Display Name</p>
+<blockquote>
+<p>配置不同的应用名称，这里需要使用到User-Defined加上info.plist来进行配置；</p>
+<p>首先，我们需要新增一个User-Defined，如下图：</p>
+</blockquote>
+<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113100.png" alt=""></p>
+<p>###4.配置info.plist文件</p>
+<blockquote>
+<p>在info.plist中找到Bundle display name，将其设置成我们刚刚新建的User-Defined:</p>
+</blockquote>
+<p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113820.png" alt=""></p>
+<p>–</p>
+<blockquote>
+<p>下面就大功告成了! 赶快编译一下看看效果吧!</p>
+</blockquote>
+<p>###总结</p>
+<blockquote>
+<p>偷懒是唯一生产力!</p>
+</blockquote>
 
       
     </div>
@@ -406,7 +458,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Shell脚本/" rel="tag"># Shell脚本</a>
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
         </div>
       
@@ -419,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/21/防止手势冲突/" rel="next" title="iOS防止手势冲突">
-                <i class="fa fa-chevron-left"></i> iOS防止手势冲突
+              <a href="/2018/04/21/自制力/" rel="next" title="自制力or自由">
+                <i class="fa fa-chevron-left"></i> 自制力or自由
               </a>
             
           </div>
@@ -428,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/23/关于AFN的内存问题/" rel="prev" title="AFNetworking内存泄露问题">
-                AFNetworking内存泄露问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,17 +531,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -557,22 +596,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一级目录"><span class="nav-number">1.</span> <span class="nav-text">创建一级目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建多级目录"><span class="nav-number">2.</span> <span class="nav-text">创建多级目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在终端打开某个软件"><span class="nav-number">3.</span> <span class="nav-text">在终端打开某个软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OC代码编译成C"><span class="nav-number">4.</span> <span class="nav-text">OC代码编译成C++</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行脚本去除运行权限"><span class="nav-number">5.</span> <span class="nav-text">运行脚本去除运行权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除命令"><span class="nav-number">6.</span> <span class="nav-text">删除命令</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
