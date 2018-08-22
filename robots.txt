@@ -9,7 +9,7 @@
 \pard\pardeftab720\sl320\partightenfactor0
 
 \f0\fs28 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 # hexo robots.txt\cf3 \cb4 \strokec3 \
+# hexo robots.txt\cf3 \cb4 \
 User-agent: *\
 \pard\pardeftab720\sl320\partightenfactor0
 \cf3 \cb1 Allow:\cb4  /\
@@ -22,5 +22,5 @@ User-agent: *\
 \cb1 Disallow:\cb4  /vendors/\
 \cb1 Disallow:\cb4  /fancybox/\
 \
-\cb1 Sitemap:\cb4  http://www\cf2 \cb1 \strokec2 .zaoanx.com\cf3 \cb4 \strokec3 /sitemap\cf2 \cb1 \strokec2 .xml\cf3 \cb4 \strokec3 \
-\cb1 Sitemap:\cb4  http://www\cf2 \cb1 \strokec2 .zaoanx.com\cf3 \cb4 \strokec3 /baidusitemap\cf2 \cb1 \strokec2 .xml}
+\cb1 Sitemap:\cb4  http://www\cf2 \cb1 .huangkk.com\cf3 \cb4 /sitemap\cf2 \cb1 .xml\cf3 \cb4 \
+\cb1 Sitemap:\cb4  http://www\cf2 \cb1 .huangkk.com\cf3 \cb4 /baidusitemap\cf2 \cb1 .xml}
