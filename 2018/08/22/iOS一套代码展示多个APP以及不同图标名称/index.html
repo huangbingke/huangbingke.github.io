@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113403.png">
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113100.png">
 <meta property="og:image" content="http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113820.png">
-<meta property="og:updated_time" content="2018-08-22T03:46:59.715Z">
+<meta property="og:updated_time" content="2018-08-22T03:48:44.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS一套代码展示多个APP以及不同图标名称">
 <meta name="twitter:description" content="先看一下效果图, 实现效果, 同一个手机安装同一个项目的不同版本:   前言 最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP, 那各">
@@ -367,10 +367,8 @@
 <p>最近收到新需求, 要求同一个工程打包出来的不同的安装包,要同时安装到一个手机上, 就是一个手机要能安装测试版, 正式版等不同版本, 当时脑子一顿惊雷, 这要怎么搞, 办法总是有的, 仔细分析了一下, 要安装不同版本, 就要配置不同的bound ID, 有一个不同的bound ID, 岂不是预示着有一个新的APP, 那各种证书岂不是要一套新的? 当时心中一万句MMP, 心说好麻烦.</p>
 </blockquote>
 <blockquote>
-<p>本着偷懒是程序员唯一生产力这一宗旨, 查阅资料, 发现了一个更简便的方法, 省去了改来改去bound ID, 切换各种证书的麻烦, 一次配置, 终身受益, 可谓一劳永逸, 配置了一下, 简直如沐春风, 整个人都变好了.</p>
+<p>本着偷懒是程序员唯一生产力这一宗旨, 查阅资料, 发现了一个更简便的方法, 省去了改来改去bound ID, 切换各种证书的麻烦, 一次配置, 终身受益, 可谓一劳永逸, 配置了一下, 简直如沐春风, 整个人都变好了.<br><a id="more"></a></p>
 </blockquote>
-<a id="more"></a>
-<p>–</p>
 <blockquote>
 <p>下面介绍一下配置步骤:</p>
 </blockquote>
@@ -398,7 +396,6 @@
 <p>在info.plist中找到Bundle display name，将其设置成我们刚刚新建的User-Defined:</p>
 </blockquote>
 <p><img src="/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/QQ20180822-113820.png" alt=""></p>
-<p>–</p>
 <blockquote>
 <p>下面就大功告成了! 赶快编译一下看看效果吧!</p>
 </blockquote>
