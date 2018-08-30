@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,">
+  <meta name="keywords" content="iOS,SDWebImage,">
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="SDWebImage的内部实现原理 之前刚开始做iOS开发的时候,一直以为SD就仅仅是单纯的为UIImageView赋网络图片的一个第三方库, 直到查阅多方资料, 并且看了源码以后, 才发现他不仅仅是赋值, 还做了更多的操作, github的UML图画的也很清晰, 越来越佩服作者了, 设计思路非常清晰. 下面以setImageWithUrl这个方法为入口, 展示了SD内部做的一些操作,对新手特别友">
-<meta name="keywords" content="iOS">
+<meta name="keywords" content="iOS,SDWebImage">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SDWebImage的内部实现原理">
 <meta property="og:url" content="http://huangkk.com/2017/08/27/SDWebImage内部实现原理/index.html">
 <meta property="og:site_name" content="黄可可的博客">
 <meta property="og:description" content="SDWebImage的内部实现原理 之前刚开始做iOS开发的时候,一直以为SD就仅仅是单纯的为UIImageView赋网络图片的一个第三方库, 直到查阅多方资料, 并且看了源码以后, 才发现他不仅仅是赋值, 还做了更多的操作, github的UML图画的也很清晰, 越来越佩服作者了, 设计思路非常清晰. 下面以setImageWithUrl这个方法为入口, 展示了SD内部做的一些操作,对新手特别友">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-22T06:28:38.133Z">
+<meta property="og:updated_time" content="2018-08-30T11:31:58.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SDWebImage的内部实现原理">
 <meta name="twitter:description" content="SDWebImage的内部实现原理 之前刚开始做iOS开发的时候,一直以为SD就仅仅是单纯的为UIImageView赋网络图片的一个第三方库, 直到查阅多方资料, 并且看了源码以后, 才发现他不仅仅是赋值, 还做了更多的操作, github的UML图画的也很清晰, 越来越佩服作者了, 设计思路非常清晰. 下面以setImageWithUrl这个方法为入口, 展示了SD内部做的一些操作,对新手特别友">
@@ -315,19 +315,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS技术</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS技术/SDWebImage/" itemprop="url" rel="index">
-                    <span itemprop="name">SDWebImage</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -516,6 +505,8 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
+            <a href="/tags/SDWebImage/" rel="tag"># SDWebImage</a>
+          
         </div>
       
 
@@ -629,7 +620,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -640,7 +631,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
