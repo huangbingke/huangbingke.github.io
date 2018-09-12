@@ -1,4 +1,9 @@
 http://huangkk.com/2018/08/22/iOS一套代码展示多个APP以及不同图标名称/
+http://huangkk.com/2018/07/15/汇编指令-伪指令汇总/
+http://huangkk.com/2018/07/15/汇编指令-Other/
+http://huangkk.com/2018/07/13/汇编指令-位运算指令集/
+http://huangkk.com/2018/07/12/汇编指令-算数运算指令/
+http://huangkk.com/2018/07/12/汇编指令-数据传送指令集/
 http://huangkk.com/2018/04/21/自制力/
 http://huangkk.com/2018/04/20/iOS最快速打包方案/
 http://huangkk.com/2017/12/08/HTTP状态码/
