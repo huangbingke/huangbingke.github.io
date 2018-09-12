@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://huangkk.com/2018/07/15/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4-Other/</loc>
-    <lastmod>2018-09-12T02:27:17.168Z</lastmod>
+    <lastmod>2018-09-12T02:36:13.797Z</lastmod>
     <data>
         <display>
         <title>汇编指令-Other</title>
@@ -24,28 +24,8 @@
 
     
   <url>
-    <loc>http://huangkk.com/2018/07/15/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4-%E4%BC%AA%E6%8C%87%E4%BB%A4%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2018-09-12T02:26:45.817Z</lastmod>
-    <data>
-        <display>
-        <title>汇编指令-伪指令汇总</title>
-        <pubTime>2018-07-15T02:16:19.000Z</pubTime>
-        
-        <tag>汇编指令</tag>
-         
-         
-           
-             
-              <breadCrumb title="汇编" url="http://huangkk.com/categories/%E6%B1%87%E7%BC%96/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://huangkk.com/2018/07/13/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4-%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4%E9%9B%86/</loc>
-    <lastmod>2018-09-12T02:20:27.996Z</lastmod>
+    <lastmod>2018-09-12T02:34:55.715Z</lastmod>
     <data>
         <display>
         <title>汇编指令-位运算指令集</title>
@@ -65,7 +45,7 @@
     
   <url>
     <loc>http://huangkk.com/2018/07/12/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4-%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4/</loc>
-    <lastmod>2018-09-12T02:18:58.153Z</lastmod>
+    <lastmod>2018-09-12T02:34:30.416Z</lastmod>
     <data>
         <display>
         <title>汇编指令-算数运算指令</title>
@@ -85,11 +65,31 @@
     
   <url>
     <loc>http://huangkk.com/2018/07/12/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4-%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4%E9%9B%86/</loc>
-    <lastmod>2018-09-12T02:17:19.539Z</lastmod>
+    <lastmod>2018-09-12T02:33:19.165Z</lastmod>
     <data>
         <display>
         <title>汇编指令-数据传送指令集</title>
         <pubTime>2018-07-12T02:09:30.000Z</pubTime>
+        
+        <tag>汇编指令</tag>
+         
+         
+           
+             
+              <breadCrumb title="汇编" url="http://huangkk.com/categories/%E6%B1%87%E7%BC%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://huangkk.com/2018/07/15/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4-%E4%BC%AA%E6%8C%87%E4%BB%A4%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2018-09-12T02:33:00.632Z</lastmod>
+    <data>
+        <display>
+        <title>汇编指令-伪指令汇总</title>
+        <pubTime>2018-07-15T02:16:19.000Z</pubTime>
         
         <tag>汇编指令</tag>
          
