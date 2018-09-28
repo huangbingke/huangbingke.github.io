@@ -87,14 +87,14 @@
 <meta property="og:site_name" content="黄可可的博客">
 <meta property="og:description" content="前言进来项目由于后台人员的离职缺失, 导致后台进度变慢, 接口也给的慢了, 界面早就写好了, 等接口的过程中, 研究了一下逆向开发, 刚刚接触, 好像发现了一个新世界的大门, 甚是欢喜, 也发现了自身知识储备的不足, 努力学习中! 下面讲不间断记录遇到的一些问题, 以及一些解决思路, 供大家参考, 如有错误欢迎指正!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-184248.png">
-<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185012.png">
-<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185433.png">
-<meta property="og:updated_time" content="2018-09-28T12:05:35.075Z">
+<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/QQ20180928-184248.png">
+<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/QQ20180928-185012.png">
+<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/QQ20180928-185433.png">
+<meta property="og:updated_time" content="2018-09-28T12:09:29.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Runtime中的property_getAttributes和property_getName区别">
 <meta name="twitter:description" content="前言进来项目由于后台人员的离职缺失, 导致后台进度变慢, 接口也给的慢了, 界面早就写好了, 等接口的过程中, 研究了一下逆向开发, 刚刚接触, 好像发现了一个新世界的大门, 甚是欢喜, 也发现了自身知识储备的不足, 努力学习中! 下面讲不间断记录遇到的一些问题, 以及一些解决思路, 供大家参考, 如有错误欢迎指正!">
-<meta name="twitter:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-184248.png">
+<meta name="twitter:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/QQ20180928-184248.png">
 
 
 
@@ -366,11 +366,11 @@
 <p><code>property_getName</code>               //获取属性名字</p>
 <p><code>property_getAttributes</code>     //获取属性名称特性</p>
 </blockquote>
-<p>打印结果如下图:<br><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-184248.png" alt=""></p>
+<p>打印结果如下图:<br><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/QQ20180928-184248.png" alt=""></p>
 <h2 id="2-看文档"><a href="#2-看文档" class="headerlink" title="2. 看文档"></a>2. 看文档</h2><p>如图, 可以很直观的看出来区别, <code>property_getName</code>只打印出了属性名字, 而<code>property_getAttributes</code>打印的信息更多一点, 你可能要问了, 那些T, TQ等等都是写什么意思, 我也带着疑问, 就来看了官方文档;打开<font color="#006666"><code>Dash</code></font>, 搜索<code>property_getAttributes</code>, 仔细查阅, 发现如下结果:</p>
-<p><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185012.png" alt=""></p>
+<p><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/QQ20180928-185012.png" alt=""></p>
 <p>再接着看:</p>
-<p><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185433.png" alt=""><br>这个就一清二楚了, 很直观了, 例如Td(double类型), Tf(float类型)等, 根据你的需要查阅就好了!</p>
+<p><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/QQ20180928-185433.png" alt=""><br>这个就一清二楚了, 很直观了, 例如Td(double类型), Tf(float类型)等, 根据你的需要查阅就好了!</p>
 <h2 id="3-看源码"><a href="#3-看源码" class="headerlink" title="3. 看源码"></a>3. 看源码</h2><p>知道了 <code>property_getAttributes</code> 和 <code>property_getName</code>的用途, 又开始好奇他的实现, 于是上<a href="https://opensource.apple.com/tarballs/objc4/" rel="external nofollow noopener noreferrer" target="_blank">源码</a>, 下载最新的<code>objc4-723</code>, 打开, 并且搜索<code>property_getAttributes</code>:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const char *property_getName(objc_property_t prop)</span><br><span class="line">&#123;</span><br><span class="line">    return prop-&gt;name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const char *property_getAttributes(objc_property_t prop)</span><br><span class="line">&#123;</span><br><span class="line">    return prop-&gt;attributes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>而<code>name</code>和<code>attributes</code>分别指向了<code>property_t</code>结构体:</p>
