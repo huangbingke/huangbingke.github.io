@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Object-C,Runtime">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言进来项目由于后台人员的离职缺失, 导致后台进度变慢, 接口也给的慢了, 界面早就写好了, 等接口的过程中, 研究了一下逆向开发, 刚刚接触, 好像发现了一个新世界的大门, 甚是欢喜, 也发现了自身知识储备的不足, 努力学习中! 下面讲不间断记录遇到的一些问题, 以及一些解决思路, 供大家参考, 如有错误欢迎指正!">
+<meta name="keywords" content="Object-C,Runtime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Runtime中的property_getAttributes和property_getName区别">
+<meta property="og:url" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/index.html">
+<meta property="og:site_name" content="黄可可的博客">
+<meta property="og:description" content="前言进来项目由于后台人员的离职缺失, 导致后台进度变慢, 接口也给的慢了, 界面早就写好了, 等接口的过程中, 研究了一下逆向开发, 刚刚接触, 好像发现了一个新世界的大门, 甚是欢喜, 也发现了自身知识储备的不足, 努力学习中! 下面讲不间断记录遇到的一些问题, 以及一些解决思路, 供大家参考, 如有错误欢迎指正!">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-184248.png">
+<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185012.png">
+<meta property="og:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185433.png">
+<meta property="og:updated_time" content="2018-09-28T12:05:35.075Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Runtime中的property_getAttributes和property_getName区别">
+<meta name="twitter:description" content="前言进来项目由于后台人员的离职缺失, 导致后台进度变慢, 接口也给的慢了, 界面早就写好了, 等接口的过程中, 研究了一下逆向开发, 刚刚接触, 好像发现了一个新世界的大门, 甚是欢喜, 也发现了自身知识储备的不足, 努力学习中! 下面讲不间断记录遇到的一些问题, 以及一些解决思路, 供大家参考, 如有错误欢迎指正!">
+<meta name="twitter:image" content="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-184248.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/">
+
+
+
+
+
+  <title>Runtime中的property_getAttributes和property_getName区别 | 黄可可的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">黄可可的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">有分享才有进步!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://huangkk.com/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄可可">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄可可的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Runtime中的property_getAttributes和property_getName区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T18:18:21+08:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>进来项目由于后台人员的离职缺失, 导致后台进度变慢, 接口也给的慢了, 界面早就写好了, 等接口的过程中, 研究了一下逆向开发, 刚刚接触, 好像发现了一个新世界的大门, 甚是欢喜, 也发现了自身知识储备的不足, 努力学习中! 下面讲不间断记录遇到的一些问题, 以及一些解决思路, 供大家参考, 如有错误欢迎指正!<br><a id="more"></a></p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>由于逆向iOS平台需要越狱设备等硬件因素, 而本人有缺少一台越狱手机, 于是瞄上了Mac端, 比较直观!</p>
+<p>在 <font color="#006666"><code>Hopper Disassember V4</code></font> 中反编译能得到类文件和方法名, 通过类名, 方法名判断开发者意图; 得到类名, 第一反应就是通过类名获取到这个类的方法属性名称, 得到名称, 还想得到数据类型等信息, 就引入了下面的问题, <code>Runtime</code>为我们提供了方法, 可以得到类的属性名称, 代码如下:</p>
+<h2 id="1-上代码"><a href="#1-上代码" class="headerlink" title="1. 上代码:"></a>1. 上代码:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void kk_LogClassPropertyList(Class cls) &#123;</span><br><span class="line">    unsigned int count;</span><br><span class="line">    objc_property_t *propertyList = class_copyPropertyList(cls, &amp;count);</span><br><span class="line">    for (int i = 0; i &lt; count; i++) &#123;</span><br><span class="line">        objc_property_t proprety = propertyList[i];</span><br><span class="line">        const char *getName = property_getName(proprety);</span><br><span class="line">        NSString *name1 = [NSString stringWithCString:getName encoding:NSUTF8StringEncoding];</span><br><span class="line"></span><br><span class="line">        const char *getAtt = property_getAttributes(proprety);</span><br><span class="line">        NSString *name2 = [NSString stringWithCString:getAtt encoding:NSUTF8StringEncoding];</span><br><span class="line"></span><br><span class="line">        NSLog(@&quot;property_getName:       -----&gt; %@&quot;, name1);</span><br><span class="line">        NSLog(@&quot;property_getAttributes: -----&gt; %@&quot;, name2);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如上代码, 我们可以看到</p>
+<blockquote>
+<p><code>class_copyPropertyList</code>     //属性列表</p>
+<p><code>property_getName</code>               //获取属性名字</p>
+<p><code>property_getAttributes</code>     //获取属性名称特性</p>
+</blockquote>
+<p>打印结果如下图:<br><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-184248.png" alt=""></p>
+<h2 id="2-看文档"><a href="#2-看文档" class="headerlink" title="2. 看文档"></a>2. 看文档</h2><p>如图, 可以很直观的看出来区别, <code>property_getName</code>只打印出了属性名字, 而<code>property_getAttributes</code>打印的信息更多一点, 你可能要问了, 那些T, TQ等等都是写什么意思, 我也带着疑问, 就来看了官方文档;打开<font color="#006666"><code>Dash</code></font>, 搜索<code>property_getAttributes</code>, 仔细查阅, 发现如下结果:</p>
+<p><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185012.png" alt=""></p>
+<p>再接着看:</p>
+<p><img src="/2018/09/28/Runtime中的propertygetAttributes和propertygetName区别/Runtime中的property-getAttributes和property-getName区别/QQ20180928-185433.png" alt=""><br>这个就一清二楚了, 很直观了, 例如Td(double类型), Tf(float类型)等, 根据你的需要查阅就好了!</p>
+<h2 id="3-看源码"><a href="#3-看源码" class="headerlink" title="3. 看源码"></a>3. 看源码</h2><p>知道了 <code>property_getAttributes</code> 和 <code>property_getName</code>的用途, 又开始好奇他的实现, 于是上<a href="https://opensource.apple.com/tarballs/objc4/" rel="external nofollow noopener noreferrer" target="_blank">源码</a>, 下载最新的<code>objc4-723</code>, 打开, 并且搜索<code>property_getAttributes</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const char *property_getName(objc_property_t prop)</span><br><span class="line">&#123;</span><br><span class="line">    return prop-&gt;name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const char *property_getAttributes(objc_property_t prop)</span><br><span class="line">&#123;</span><br><span class="line">    return prop-&gt;attributes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而<code>name</code>和<code>attributes</code>分别指向了<code>property_t</code>结构体:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct property_t &#123;</span><br><span class="line">    const char *name;</span><br><span class="line">    const char *attributes;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>搜索发现<code>name</code>和<code>attributes</code>赋值分别为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">property_t&amp; prop = plist-&gt;get(plist-&gt;count++);</span><br><span class="line">prop.name = strdupIfMutable(name)</span><br><span class="line">prop.attributes = copyPropertyAttributeString(attrs, count);</span><br></pre></td></tr></table></figure>
+<p><code>copyPropertyAttributeString</code>的实现为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">const char *</span><br><span class="line">copyPropertyAttributeString(const objc_property_attribute_t *attrs,</span><br><span class="line">                            unsigned int count)</span><br><span class="line">&#123;</span><br><span class="line">    char *result;</span><br><span class="line">    unsigned int i;</span><br><span class="line">    if (count == 0) return strdup(&quot;&quot;);</span><br><span class="line">    </span><br><span class="line">#if DEBUG</span><br><span class="line">    // debug build: sanitize input</span><br><span class="line">    for (i = 0; i &lt; count; i++) &#123;</span><br><span class="line">        assert(attrs[i].name);</span><br><span class="line">        assert(strlen(attrs[i].name) &gt; 0);</span><br><span class="line">        assert(! strchr(attrs[i].name, &apos;,&apos;));</span><br><span class="line">        assert(! strchr(attrs[i].name, &apos;&quot;&apos;));</span><br><span class="line">        if (attrs[i].value) assert(! strchr(attrs[i].value, &apos;,&apos;));</span><br><span class="line">    &#125;</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">    size_t len = 0;</span><br><span class="line">    for (i = 0; i &lt; count; i++) &#123;</span><br><span class="line">        if (attrs[i].value) &#123;</span><br><span class="line">            size_t namelen = strlen(attrs[i].name);</span><br><span class="line">            if (namelen &gt; 1) namelen += 2;  // long names get quoted</span><br><span class="line">            len += namelen + strlen(attrs[i].value) + 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    result = (char *)malloc(len + 1);</span><br><span class="line">    char *s = result;</span><br><span class="line">    for (i = 0; i &lt; count; i++) &#123;</span><br><span class="line">        if (attrs[i].value) &#123;</span><br><span class="line">            size_t namelen = strlen(attrs[i].name);</span><br><span class="line">            if (namelen &gt; 1) &#123;</span><br><span class="line">                s += sprintf(s, &quot;\&quot;%s\&quot;%s,&quot;, attrs[i].name, attrs[i].value);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                s += sprintf(s, &quot;%s%s,&quot;, attrs[i].name, attrs[i].value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // remove trailing &apos;,&apos; if any</span><br><span class="line">    if (s &gt; result) s[-1] = &apos;\0&apos;;</span><br><span class="line"></span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>copyPropertyAttributeString</code>第一个参数也是一个结构体指针, 如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">    const char * _Nonnull name;           /**&lt; The name of the attribute */</span><br><span class="line">    const char * _Nonnull value;          /**&lt; The value of the attribute (usually empty) */</span><br><span class="line">&#125; objc_property_attribute_t;</span><br></pre></td></tr></table></figure>
+<p><code>name</code>赋值:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">static inline char *</span><br><span class="line">strdupIfMutable(const char *str) &#123;</span><br><span class="line">    size_t size = strlen(str) + 1;</span><br><span class="line">    if (_dyld_is_memory_immutable(str, size)) &#123;</span><br><span class="line">        return (char *)str;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return (char *)memdup(str, size);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>strdupIfMutable传入的参数为一个char型字符, 如果在内存中存在, 就返回, 如果不存在, 释放那块地址空间, 然后<code>memcpy()</code>函数从src内存中拷贝n个字节到dest内存区域，但是源和目的的内存区域不能重叠。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>小问题, 引出大思考, 底层还是要了解的, 否则只能抓瞎, 你觉得呢?</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>看到这就是真爱,打个赏呗~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WechatPay.png" alt="黄可可 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipay.png" alt="黄可可 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Runtime/" rel="tag"># Runtime</a>
+          
+            <a href="/tags/Object-c/" rel="tag"># Object-c</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/27/获取最高权限-卸载Mac的自带软件/" rel="next" title="获取最高权限,卸载Mac的自带软件">
+                <i class="fa fa-chevron-left"></i> 获取最高权限,卸载Mac的自带软件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="黄可可">
+            
+              <p class="site-author-name" itemprop="name">黄可可</p>
+              <p class="site-description motion-element" itemprop="description">有分享才有进步!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-上代码"><span class="nav-number">2.1.</span> <span class="nav-text">1. 上代码:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-看文档"><span class="nav-number">2.2.</span> <span class="nav-text">2. 看文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-看源码"><span class="nav-number">2.3.</span> <span class="nav-text">3. 看源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄可可</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io" rel="external nofollow noopener noreferrer">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
